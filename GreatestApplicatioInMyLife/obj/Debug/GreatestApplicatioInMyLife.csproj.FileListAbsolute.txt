@@ -1,1 +1,14 @@
 c:\users\artem\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\bin\Debug\GreatestApplicatioInMyLife.exe.config
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\bin\Debug\GreatestApplicatioInMyLife.exe
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\bin\Debug\GreatestApplicatioInMyLife.pdb
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.csprojResolveAssemblyReference.cache
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\MainWindow.baml
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\MainWindow.g.cs
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\App.g.cs
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife_MarkupCompile.cache
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.g.resources
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.Properties.Resources.resources
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.csproj.GenerateResource.Cache
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.exe.licenses
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.exe
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.pdb
