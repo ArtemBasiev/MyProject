@@ -12,3 +12,7 @@ C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\
 C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.exe.licenses
 C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.exe
 C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\GreatestApplicatioInMyLife.pdb
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\bin\Debug\FirebirdSql.Data.FirebirdClient.dll
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\bin\Debug\FirebirdSql.Data.FirebirdClient.pdb
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\AutWindow.baml
+C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\obj\Debug\AutWindow.g.cs
