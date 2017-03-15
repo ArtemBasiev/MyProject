@@ -1,7 +1,7 @@
-﻿<Window
+﻿<Window 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" 
           xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
      xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
@@ -10,43 +10,41 @@
     xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
     x:Name="mainwindow" x:Class="GreatestApplicatioInMyLife.MainWindow"
-        Title="MainWindow" Height="350" Width="525" dx:ThemeManager.ThemeName="MetropolisLight">
-    <Window.Resources>
- 
-    </Window.Resources>
+        Title="Главное окно" Height="631.1" Width="1011" dx:ThemeManager.ThemeName="LightGray">
+
     <Grid RenderTransformOrigin="0.5,0.504">
-    <DockPanel LastChildFill="True">
-            <dxb:BarContainerControl  DockPanel.Dock="Top">                
-                <dxb:MainMenuControl x:Name="mainMenu" Caption="MainMenu" Margin="0">                 
-                    <dxb:BarSubItem Content="Справочники">
+        <DockPanel LastChildFill="True">
+            <dxb:BarContainerControl  DockPanel.Dock="Top">
+                <dxb:MainMenuControl x:Name="mainMenu" Caption="MainMenu" Margin="0">
+                    <dxb:BarSubItem Content="СПРАВОЧНИКИ">
                         <dxb:BarButtonItem x:Name="Nom" Content="Номенклатура" ItemClick="Nom_ItemClick"/>
-                        <dxb:BarSubItem Content="Контрагенты" BarItemDisplayMode="ContentAndGlyph" Glyph="Images/Team_16x16.png">
-                            <dxb:BarButtonItem Content="Поставщики" Glyph="Images/Customer_16x16.png"/>
-                            <dxb:BarButtonItem Content="Сотрудники" Glyph="Images/Employee_16x16.png"/>
-                        </dxb:BarSubItem>
-                        <dxb:BarButtonItem Content="Валюта"/>
+                        <dxb:BarButtonItem x:Name="brbt_provider" Content="Поставщики" Glyph="Images/Customer_16x16.png" ItemClick="brbt_provider_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="brbt_employee" Content="Сотрудники" Glyph="Images/Employee_16x16.png" ItemClick="brbt_employee_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="brbt_customer" Content="Покупатели" Glyph="Images/Employee_16x16.png" ItemClick="brbt_customer_ItemClick"/>
                         <dxb:BarButtonItem x:Name="brbtMeasure" Content="Единицы измерения" ItemClick="brbtMeasure_ItemClick"/>
+                        <dxb:BarButtonItem x:Name="brbt_warehouse" Content="Склады" ItemClick="brbt_warehouse_ItemClick" />
                     </dxb:BarSubItem>
-                    <dxb:BarSubItem Content="Документы" BarItemDisplayMode="Content">
+                    <dxb:BarSubItem Content="ДОКУМЕНТЫ" BarItemDisplayMode="Content">
                         <dxb:BarButtonItem Content="Приход номенклатуры"/>
                         <dxb:BarButtonItem Content="Списание номенклатуры"/>
                         <dxb:BarButtonItem Content="Перемещение номенклатуры"/>
                     </dxb:BarSubItem>
-                    <dxb:BarSubItem Content="Отчеты">
+                    <dxb:BarSubItem Content="ОТЧЕТЫ">
                         <dxb:BarButtonItem Content="Остатки"/>
                         <dxb:BarButtonItem Content="Список номенклатуры"/>
                         <dxb:BarButtonItem Content="Список контрагентов"/>
                     </dxb:BarSubItem>
-                    <dxb:BarSubItem Content="Помощь">
+                    <dxb:BarSubItem Content="ПОМОЩЬ">
                         <dxb:BarButtonItem Content="Справка" Glyph="Images/Question_16x16.png"/>
                         <dxb:BarButtonItem Content="О прогрмамме"/>
                     </dxb:BarSubItem>
-                    <dxb:BarSubItem Content="Выход" >
+                    <dxb:BarSubItem Content="ВЫХОД" >
                         <dxb:BarButtonItem x:Name="btExitApp" Content="Из приложения" Glyph="Images/Close_16x16.png" ItemClick="btExitApp_ItemClick"/>
                         <dxb:BarButtonItem Content="Из учетной записи"/>
                     </dxb:BarSubItem>
-                    
+
                 </dxb:MainMenuControl>
             </dxb:BarContainerControl>
             <dxb:StatusBarControl x:Name="statusBar" DockPanel.Dock="Bottom" Caption="StatusBar">
@@ -57,17 +55,85 @@
                 <dxb:BarStaticItem Content="Info" Glyph="{dx:DXImage Image=Info_16x16.png}" LargeGlyph="{dx:DXImage Image=Info_32x32.png}" Alignment="Far" BarItemDisplayMode="ContentAndGlyph" ShowBorder="True"/>
             </dxb:StatusBarControl>
             <Grid Margin="0,10">
-                <dxdo:DockLayoutManager x:Name="DemoDockContainer" Grid.Row="1" FloatingMode="Desktop">
-                    
+                <dxdo:DockLayoutManager x:Name="DemoDockContainer" Grid.Row="1" FloatingMode="Desktop" >
+
                     <dxdo:LayoutGroup x:Name="lgMain">
-                        <dxdo:DocumentGroup Name="DocumentHost" DestroyOnClosingChildren="False" >
-                            <dxdo:DocumentPanel Caption="Документ">
-                                <dxg:GridControl AutoGenerateColumns="AddNew">
-                                    <dxg:GridControl.View>
-                                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
-                                    </dxg:GridControl.View>
-                                </dxg:GridControl>
+                        <dxdo:DocumentGroup x:Name="DocumentHost" DestroyOnClosingChildren="False"  >
+                            <dxdo:DocumentPanel Caption="Документы">
+                                
+                                <dxdo:DockLayoutManager x:Name="doc_container" Grid.Row="1" FloatingMode="Desktop">
+                                    <dxdo:LayoutGroup>
+                                        <dxdo:TabbedGroup>
+
+                                            <dxdo:LayoutPanel x:Name="arrive_documents" Caption="Приход"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <dxlc:ScrollBox AnimateScrolling="True" ScrollBars="Auto">
+                                                <StackPanel>
+                                                    <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10">
+                                                        <dxb:BarButtonItem x:Name="but_add_arr" Content="Добавить" ItemClick="but_add_arr_ItemClick"  />
+                                                        <dxb:BarButtonItem x:Name="but_del_arr" Content="Удалить" ItemClick="but_del_arr_ItemClick"  />
+                                                        <dxb:BarButtonItem x:Name="but_refresh_list_arr" Content="Обновить" ItemClick="but_refresh_list_arr_ItemClick"  />
+                                                        <dxb:BarButtonItem x:Name="but_help_arr" Content="Справка"  />
+                                                    </dxb:ToolBarControl>
+                                                    <dxg:GridControl x:Name="gc_arrive_list" AutoGenerateColumns="AddNew" MaxHeight="300" Loaded="gc_arrive_list_Loaded" KeyUp="gc_arrive_list_KeyUp" >
+                                                        <dxg:GridControl.View>
+                                                            <dxg:TableView x:Name="view_rgid_arr" AllowPerPixelScrolling="True" ShowTotalSummary="True" FocusedRowChanged="view_rgid_arr_FocusedRowChanged"/>
+                                                        </dxg:GridControl.View>
+                                                    </dxg:GridControl>
+                                                   
+                                                        <dx:DXTabControl Margin="0,20,0,0">
+                                                            <dx:DXTabItem Header="Детали документа">
+                                                                
+                                                                <StackPanel>
+                                                                    <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5,7,10,10">
+                                                                        <dxb:BarButtonItem x:Name="but_det_arr_add" Content="Добавить" ItemClick="but_det_arr_add_ItemClick"  />
+                                                                        <dxb:BarButtonItem x:Name="but_del_det_arr" Content="Удалить" ItemClick="but_del_det_arr_ItemClick"   />
+                                                                        <dxb:BarButtonItem x:Name="but_refresh_det_arr" Content="Обновить" ItemClick="but_refresh_det_arr_ItemClick" />
+                                                                        <dxb:BarButtonItem x:Name="but_help_det_arr" Content="Справка"  />
+                                                                    </dxb:ToolBarControl>
+                                                                    <dxg:GridControl x:Name="gc_arrive_det" AutoGenerateColumns="AddNew" MaxHeight="1000" KeyUp="gc_arrive_det_KeyUp"  >
+                                                                        <dxg:GridControl.View>
+                                                                            <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                                        </dxg:GridControl.View>
+                                                                    </dxg:GridControl>
+                                                                </StackPanel >
+                                                            </dx:DXTabItem>
+                                                        </dx:DXTabControl>
+                                                    </StackPanel>
+                                                    </dxlc:ScrollBox>
+                                            </dxdo:LayoutPanel>
+                                            <dxdo:LayoutPanel x:Name="movement_documents" Caption="Перемещение"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <dxg:GridControl AutoGenerateColumns="AddNew">
+                                                    <dxg:GridControl.View>
+                                                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                    </dxg:GridControl.View>
+                                                </dxg:GridControl>
+                                            </dxdo:LayoutPanel>
+                                            <dxdo:LayoutPanel x:Name="realisation_documents" Caption="Реализация"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <dxg:GridControl AutoGenerateColumns="AddNew">
+                                                    <dxg:GridControl.View>
+                                                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                    </dxg:GridControl.View>
+                                                </dxg:GridControl>
+                                            </dxdo:LayoutPanel>
+                                            <dxdo:LayoutPanel x:Name="leave_documents" Caption="Списание остатков"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <dxg:GridControl AutoGenerateColumns="AddNew">
+                                                    <dxg:GridControl.View>
+                                                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                    </dxg:GridControl.View>
+                                                </dxg:GridControl>
+                                            </dxdo:LayoutPanel>
+                                            <dxdo:LayoutPanel x:Name="ost_documents" Caption="Ввод остатков"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <dxg:GridControl AutoGenerateColumns="AddNew">
+                                                    <dxg:GridControl.View>
+                                                        <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                    </dxg:GridControl.View>
+                                                </dxg:GridControl>
+                                            </dxdo:LayoutPanel>
+                                        </dxdo:TabbedGroup>
+                                    </dxdo:LayoutGroup>
+                                </dxdo:DockLayoutManager>
                             </dxdo:DocumentPanel>
+                           
                         </dxdo:DocumentGroup>
                     </dxdo:LayoutGroup>
 

@@ -73,7 +73,48 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="add_arr.xaml.cs">
+      <DependentUpon>add_arr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_details_arr.xaml.cs">
+      <DependentUpon>add_details_arr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\uc_dockpanel_di.xaml.cs">
+      <DependentUpon>uc_dockpanel_di.xaml</DependentUpon>
+    </Compile>
+    <Page Include="add_arr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_details_arr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AutWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_Cus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_Emp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_Mes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_Nom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_Prov.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Insert_War.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -88,10 +129,32 @@
     <Compile Include="AutWindow.xaml.cs">
       <DependentUpon>AutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Insert_Cus.xaml.cs">
+      <DependentUpon>Insert_Cus.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Emp.xaml.cs">
+      <DependentUpon>Insert_Emp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Mes.xaml.cs">
+      <DependentUpon>Insert_Mes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Nom.xaml.cs">
+      <DependentUpon>Insert_Nom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_Prov.xaml.cs">
+      <DependentUpon>Insert_Prov.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Insert_War.xaml.cs">
+      <DependentUpon>Insert_War.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="UserControls\uc_dockpanel_di.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -169,6 +232,54 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Question_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Add_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\AddFile_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Apply_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Cancel_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Close_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Customer_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\DeleteList_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Employee_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Index_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Insert_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Print_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Question_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Refresh2_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Reset_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Role_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Team_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
