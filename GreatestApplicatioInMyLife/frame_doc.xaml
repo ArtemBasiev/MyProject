@@ -1,0 +1,129 @@
+﻿<Window x:Name="Frame_doc" x:Class="GreatestApplicatioInMyLife.frame_doc"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+          xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+     xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+     xmlns:local="clr-namespace:GreatestApplicatioInMyLife"
+        dx:ThemeManager.ThemeName="Office2013"
+        Title="Просмотр документов" Height="534.091" Width="805.682" Icon="Images/icons8-Документы Google-32.png" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid>
+        <dxdo:DockLayoutManager x:Name="doc_container" Grid.Row="1" FloatingMode="Desktop">
+            <dxdo:LayoutGroup>
+                <dxdo:TabbedGroup>
+
+                    <dxdo:LayoutPanel x:Name="arrive_documents" Caption="Приход"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+
+                        <StackPanel>
+                            <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10">
+                             
+                                <dxb:BarButtonItem x:Name="but_refresh_list_arr" Content="Обновить" ItemClick="but_refresh_list_arr_ItemClick" GlyphAlignment="Top" Glyph="Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"  />
+                                <dxb:BarButtonItem x:Name="but_report" Content="Отчет" GlyphSize="Large" GlyphAlignment="Top" Glyph="UserControls/Images/Print_32x32.png"  BarItemDisplayMode="ContentAndGlyph" ItemClick="but_report_ItemClick"  />
+                              
+                            </dxb:ToolBarControl>
+                            <dxg:GridControl x:Name="gc_arrive_list" AutoGenerateColumns="AddNew" MaxHeight="300" Loaded="gc_arrive_list_Loaded" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="view_rgid_arr" AllowPerPixelScrolling="True" ShowTotalSummary="True" FocusedRowChanged="view_rgid_arr_FocusedRowChanged"/>
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+
+                            <dx:DXTabControl Margin="0,20,0,0">
+                                <dx:DXTabItem Header="Детали документа">
+
+                                    <StackPanel>
+                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5,7,10,10">
+                                           
+                                            <dxb:BarButtonItem x:Name="but_refresh_det_arr" Content="Обновить" ItemClick="but_refresh_det_arr_ItemClick" GlyphAlignment="Top" GlyphSize="Small" Glyph="UserControls/Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" />
+
+                                        </dxb:ToolBarControl>
+                                        <dxg:GridControl x:Name="gc_arrive_det" AutoGenerateColumns="AddNew" MaxHeight="1000"   >
+                                            <dxg:GridControl.View>
+                                                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                            </dxg:GridControl.View>
+                                        </dxg:GridControl>
+                                    </StackPanel >
+                                </dx:DXTabItem>
+                            </dx:DXTabControl>
+                        </StackPanel>
+
+                    </dxdo:LayoutPanel>
+                    <dxdo:LayoutPanel x:Name="movement_documents" Caption="Перемещение"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                        <StackPanel>
+                            <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10">
+                               
+                                <dxb:BarButtonItem x:Name="but_refresh_list_move" Content="Обновить" ItemClick="but_refresh_list_move_ItemClick" GlyphAlignment="Top" Glyph="Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"  />
+                                <dxb:BarButtonItem x:Name="but_report_move" Content="Отчет" GlyphSize="Large" GlyphAlignment="Top" Glyph="UserControls/Images/Print_32x32.png"  BarItemDisplayMode="ContentAndGlyph" ItemClick="but_report_move_ItemClick"  />
+                              
+                            </dxb:ToolBarControl>
+                            <dxg:GridControl x:Name="gc_move_list" AutoGenerateColumns="AddNew" MaxHeight="300" Loaded="gc_move_list_Loaded"  >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="view_rgid_move" AllowPerPixelScrolling="True" ShowTotalSummary="True" FocusedRowChanged="view_rgid_move_FocusedRowChanged"/>
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+
+                            <dx:DXTabControl Margin="0,20,0,0">
+                                <dx:DXTabItem Header="Детали документа">
+
+                                    <StackPanel>
+                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5,7,10,10">
+                                           
+                                            <dxb:BarButtonItem x:Name="but_refresh_det_move" Content="Обновить"  GlyphAlignment="Top" GlyphSize="Small" Glyph="UserControls/Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" ItemClick="but_refresh_det_move_ItemClick"/>
+
+                                        </dxb:ToolBarControl>
+                                        <dxg:GridControl x:Name="gc_move_det" AutoGenerateColumns="AddNew" MaxHeight="1000"   >
+                                            <dxg:GridControl.View>
+                                                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                            </dxg:GridControl.View>
+                                        </dxg:GridControl>
+                                    </StackPanel >
+                                </dx:DXTabItem>
+                            </dx:DXTabControl>
+                        </StackPanel>
+                    </dxdo:LayoutPanel>
+
+                    <dxdo:LayoutPanel x:Name="leave_documents" Caption="Расход"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                        <StackPanel>
+                            <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10">
+                              
+                                <dxb:BarButtonItem x:Name="but_refresh_list_leave" Content="Обновить" ItemClick="but_refresh_list_leave_ItemClick" GlyphAlignment="Top" Glyph="Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large"  />
+                                <dxb:BarButtonItem x:Name="but_report_leave" Content="Отчет" GlyphSize="Large" GlyphAlignment="Top" Glyph="UserControls/Images/Print_32x32.png"  BarItemDisplayMode="ContentAndGlyph" ItemClick="but_report_leave_ItemClick"  />
+                              
+                            </dxb:ToolBarControl>
+                            <dxg:GridControl x:Name="gc_leave_list" AutoGenerateColumns="AddNew" MaxHeight="300" Loaded="gc_leave_list_Loaded"  >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="view_rgid_leave" AllowPerPixelScrolling="True" ShowTotalSummary="True" FocusedRowChanged="view_rgid_leave_FocusedRowChanged"/>
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+
+                            <dx:DXTabControl Margin="0,20,0,0">
+                                <dx:DXTabItem Header="Детали документа">
+
+                                    <StackPanel>
+                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5,7,10,10">
+                                           
+                                            <dxb:BarButtonItem x:Name="but_refresh_det_leave" Content="Обновить"  GlyphAlignment="Top" GlyphSize="Small" Glyph="UserControls/Images/Refresh2_32x32.png" BarItemDisplayMode="ContentAndGlyph" ItemClick="but_refresh_det_leave_ItemClick" />
+
+                                        </dxb:ToolBarControl>
+                                        <dxg:GridControl x:Name="gc_leave_det" AutoGenerateColumns="AddNew" MaxHeight="1000"  >
+                                            <dxg:GridControl.View>
+                                                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                            </dxg:GridControl.View>
+                                        </dxg:GridControl>
+                                    </StackPanel >
+                                </dx:DXTabItem>
+                            </dx:DXTabControl>
+                        </StackPanel>
+                    </dxdo:LayoutPanel>
+
+                </dxdo:TabbedGroup>
+            </dxdo:LayoutGroup>
+        </dxdo:DockLayoutManager>
+    </Grid>
+</Window>

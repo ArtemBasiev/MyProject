@@ -32,16 +32,22 @@ namespace GreatestApplicatioInMyLife
         {
             try
             {
-                FbCommand sqlforin = new FbCommand("INS_PROV", con_ins_prov.presh.preh.fb);
+                FbCommand sqlforin = new FbCommand("INS_CONTRACTORS", con_ins_prov.presh.preh.fb);
                 sqlforin.CommandType = System.Data.CommandType.StoredProcedure;
-                sqlforin.Parameters.Add("@NAME", FbDbType.VarChar).Value = tb_name_prov.Text;
+                sqlforin.Parameters.Add("@FLAG", FbDbType.VarChar).Value = "pro";
+                sqlforin.Parameters.Add("@FN", FbDbType.VarChar).Value = tb_fname_prov.Text;
+                sqlforin.Parameters.Add("@SN", FbDbType.VarChar).Value = tb_sname_prov.Text;
                 sqlforin.Parameters.Add("@ADR", FbDbType.VarChar).Value = tb_adr_prov.Text;
                 sqlforin.Parameters.Add("@INN", FbDbType.VarChar).Value = tb_inn_prov.Text;
                 sqlforin.Parameters.Add("@TEL", FbDbType.VarChar).Value = tb_tel_prov.Text;
+                sqlforin.Parameters.Add("@CONT_NAME", FbDbType.VarChar).Value = tb_contname_prov.Text;
+                sqlforin.Parameters.Add("@POS", FbDbType.VarChar).Value = null;
                 sqlforin.ExecuteNonQuery();
 
 
-                tb_name_prov.Clear();
+                tb_contname_prov.Clear();
+                tb_sname_prov.Clear();
+                tb_fname_prov.Clear();
                 tb_adr_prov.Clear();
                 tb_inn_prov.Clear();
                 tb_tel_prov.Clear();

@@ -1,0 +1,148 @@
+﻿<Window x:Class="GreatestApplicatioInMyLife.Admin_panel"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+          xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+     xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+    xmlns:local="clr-namespace:GreatestApplicatioInMyLife"
+    dxc:DXSplashScreen.SplashScreenType="{x:Type local:SplashScreenView}"
+    x:Name="admin_panel" 
+        Title="Окно администрирования" Height="699.757" Width="1445.328" dx:ThemeManager.ThemeName="Office2013" Icon="Images/icons8-Защита пользователя-32.png" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+
+    <Grid RenderTransformOrigin="0.5,0.504">
+        <DockPanel LastChildFill="True">
+            <dxb:BarContainerControl  DockPanel.Dock="Top">
+                <dxb:MainMenuControl x:Name="mainMenu" Caption="MainMenu" Margin="0">
+                    <dxb:BarSubItem Content="ПОМОЩЬ">
+                        <dxb:BarButtonItem Content="Справка" Glyph="Images/Question_16x16.png"/>
+                   
+                    </dxb:BarSubItem>
+                    <dxb:BarSubItem Content="ЛИЧНЫЙ КАБИНЕТ">
+                        <dxb:BarButtonItem Content="Изменение пароля" Glyph="Images/icons8-Пароль-16.png" ItemClick="BarButtonItem_ItemClick"/>
+                       
+                    </dxb:BarSubItem>
+                    <dxb:BarSubItem Content="ВЫХОД"  >
+                        <dxb:BarButtonItem x:Name="btExitApp" Content="Из приложения" Glyph="Images/Close_16x16.png" ItemClick="btExitApp_ItemClick" />
+                        <dxb:BarButtonItem Content="Из учетной записи" Glyph="Images/Выход-16.png" ItemClick="BarSubItem_ItemClick"/>
+                    </dxb:BarSubItem>
+
+                </dxb:MainMenuControl>
+            </dxb:BarContainerControl>
+            <dxb:StatusBarControl x:Name="statusBar" DockPanel.Dock="Bottom" Caption="StatusBar">
+                <dxb:BarStaticItem Content="Строка:" ShowBorder="False"/>
+                <dxb:BarStaticItem Content="1"/>
+                <dxb:BarStaticItem Content="Столбец:" ShowBorder="False"/>
+                <dxb:BarStaticItem Content="1"/>
+
+            </dxb:StatusBarControl>
+            <Grid Margin="0,10">
+                <dxdo:DockLayoutManager x:Name="DemoDockContainer" Grid.Row="1" FloatingMode="Desktop" >
+
+                    <dxdo:LayoutGroup x:Name="lgMain">
+                        <dxdo:DocumentGroup x:Name="DocumentHost" DestroyOnClosingChildren="False"  >
+                            <dxdo:DocumentPanel Caption="Панель администратора" AllowClose="False">
+
+                                <dxdo:DockLayoutManager x:Name="doc_container" Grid.Row="1" FloatingMode="Desktop">
+                                    <dxdo:LayoutGroup>
+                                        <dxdo:TabbedGroup>
+
+                                            <dxdo:LayoutPanel x:Name="arrive_documents" Caption="Склады и ответственные лица"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="19*" Name="space_tree" />
+                                                        <ColumnDefinition Width="81*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.ColumnSpan="1" Margin="12,0"  Name="Tree_SP">
+                                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                                                            <dxb:BarButtonItem x:Name="but_refresh_tree" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" ItemClick="but_refresh_tree_ItemClick" />
+
+                                                        </dxb:ToolBarControl>
+                                                        <dxg:GridControl x:Name="grid_war" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" SelectedItemChanged="grid_war_SelectedItemChanged" Loaded="grid_war_Loaded" >
+                                                            <dxg:GridControl.View>
+                                                                <dxg:TableView x:Name="view_grid_tree_war" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                            </dxg:GridControl.View>
+                                                        </dxg:GridControl>
+                                                    </StackPanel>
+
+
+                                                    <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="1">
+                                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                                                            <dxb:BarButtonItem x:Name="but_nom" Content="Добавить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Add_32x32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" ItemClick="but_nom_ItemClick" />
+                                                            <dxb:BarButtonItem x:Name="but_del" Content="Удалить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Cancel_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" ItemClick="but_del_ItemClick"  />
+                                                            <dxb:BarButtonItem x:Name="but_refresh" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" ItemClick="but_refresh_ItemClick" />
+                                                            <dxb:BarButtonItem x:Name="but_help" Content="Справка" GlyphAlignment="Top" GlyphSize="Large" BarItemDisplayMode="ContentAndGlyph" Glyph="UserControls/Images/Question_32x32.png" ItemClick="but_help_ItemClick"   />
+                                                        </dxb:ToolBarControl>
+                                                        <dxg:GridControl x:Name="grid_res" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" >
+                                                            <dxg:GridControl.View>
+                                                                <dxg:TableView x:Name="view_grid_res" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                            </dxg:GridControl.View>
+                                                        </dxg:GridControl>
+
+
+                                                    </StackPanel>
+                                                </Grid>
+
+                                            </dxdo:LayoutPanel>
+                                            <dxdo:LayoutPanel x:Name="roles_and_users" Caption="Роли и пользователи"  HeaderBarContainerControlName="SolutionBar" AllowClose="False" AllowHide="False">
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="313*"  />
+                                                        <ColumnDefinition Width="1108*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <StackPanel Grid.ColumnSpan="1" Margin="12,0"  >
+                                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                                                            <dxb:BarButtonItem x:Name="but_refresh_tree_roles" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" ItemClick="but_refresh_tree_roles_ItemClick" />
+                                                            <dxb:BarButtonItem x:Name="but_add_role" Content="Добавить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Add_32x32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" ItemClick="but_add_role1_ItemClick"  />
+                                                            <dxb:BarButtonItem x:Name="but_change_role" Content="Изменить"  Glyph="Images/Edit_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" ItemClick="but_change_role1_ItemClick"  />
+                                                            <dxb:BarButtonItem x:Name="but_del_role" Content="Удалить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Cancel_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" ItemClick="but_del_role1_ItemClick"  />
+                                                           
+                                                        </dxb:ToolBarControl>
+                                                        <dxg:GridControl x:Name="grid_roles" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" Loaded="grid_roles_Loaded" SelectedItemChanged="grid_roles_SelectedItemChanged" KeyUp="grid_roles1_KeyUp" >
+                                                            <dxg:GridControl.View>
+                                                                <dxg:TableView x:Name="view_grid_tree_roles" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                            </dxg:GridControl.View>
+                                                        </dxg:GridControl>
+                                                    </StackPanel>
+
+
+                                                    <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="1">
+                                                        <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                                                            <dxb:BarButtonItem x:Name="but_add_user" Content="Добавить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Add_32x32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" ItemClick="but_add_user_ItemClick" />
+                                                            <dxb:BarButtonItem x:Name="but_del_user" Content="Удалить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Cancel_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" ItemClick="but_del_user_ItemClick"  />
+                                                            <dxb:BarButtonItem x:Name="but_refresh_user" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" />
+                                                            <dxb:BarButtonItem x:Name="but_help_users" Content="Справка" GlyphAlignment="Top" GlyphSize="Large" BarItemDisplayMode="ContentAndGlyph" Glyph="UserControls/Images/Question_32x32.png" ItemClick="but_help_ItemClick"   />
+                                                        </dxb:ToolBarControl>
+                                                        <dxg:GridControl x:Name="grid_users" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" KeyUp="grid_users_KeyUp" >
+                                                            <dxg:GridControl.View>
+                                                                <dxg:TableView x:Name="view_grid_users" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                                            </dxg:GridControl.View>
+                                                        </dxg:GridControl>
+
+
+                                                    </StackPanel>
+                                                </Grid>
+                                            </dxdo:LayoutPanel>
+
+
+
+                                        </dxdo:TabbedGroup>
+                                    </dxdo:LayoutGroup>
+                                </dxdo:DockLayoutManager>
+                            </dxdo:DocumentPanel>
+
+                        </dxdo:DocumentGroup>
+                    </dxdo:LayoutGroup>
+
+                </dxdo:DockLayoutManager>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

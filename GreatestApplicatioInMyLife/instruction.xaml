@@ -1,0 +1,49 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxca="http://schemas.devexpress.com/winfx/2008/xaml/carousel" xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit" x:Class="GreatestApplicatioInMyLife.instruction"
+    dx:ThemeManager.ThemeName="Office2013"
+        Title="Справка" Height="413.636" Width="798" Icon="Images/Question_16x16.png" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="273"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <dxlc:ScrollBox Grid.Column="0"   Margin="0,0,0,0" VerticalAlignment="Top"  >
+            <dxn:NavBarControl HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" >
+                <dxn:NavBarGroup x:Name="navBarDoc" Header="Документы"  ItemDisplayMode="ImageAndText"  IsExpanded="False" GroupScrollMode="ScrollBar" ImageSource="Images/icons8-Документы Google-32.png">
+                    <dxn:NavBarItem x:Name="navBarItem1" Content="Главное окно" Click="navBarItem1_Click" Select="navBarItem1_Click" />
+                    <dxn:NavBarItem x:Name="navBarItem2" Content="Виды документов" Click="navBarItem2_Click" Select="navBarItem2_Click"/>
+                    <dxn:NavBarItem x:Name="navBarItem3" Content="Создание/Редактирование документов" Click="navBarItem3_Click" Select="avBarItem3_Click"/>
+                </dxn:NavBarGroup>
+
+                <dxn:NavBarGroup x:Name="navBarDi" Header="Справочники" IsExpanded="False" ImageSource="Images/icons8-Журнал-32.png">
+                    <dxn:NavBarItem x:Name="navBarDer1" Content="Виды справочников" Click="navBarDer1_Click" Select="navBarDer1_Click"/>
+                    <dxn:NavBarItem x:Name="navBarDer2" Content="Редактирование справочников" Click="navBarDer2_Click" Select="navBarDer2_Click"/>
+                </dxn:NavBarGroup>
+
+                <dxn:NavBarGroup x:Name="navBarReport" Header="Отчеты" IsExpanded="False" ImageSource="Images/icons8-Чек-32.png">
+                    <dxn:NavBarItem x:Name="navBarRep1" Content="Виды отчетов" Click="navBarRep1_Click" Select="navBarRep1_Click"/>
+                    <dxn:NavBarItem x:Name="navBarRep2" Content="Формирование отчетов" Click="navBarRep2_Click" Select="navBarRep2_Click"/>
+                </dxn:NavBarGroup>
+
+                <dxn:NavBarGroup x:Name="navBarWp" Header="Рабочие периоды" IsExpanded="False" ImageSource="Images/Cегодня-32.png">
+                    <dxn:NavBarItem x:Name="navBarWp1" Content="Понятие рабочего периода" Click="navBarWp1_Click" Select="navBarWp1_Click"/>
+                    <dxn:NavBarItem x:Name="navBarWp2" Content="Управление рабочими периодами" Click="navBarWp2_Click" Select="navBarWp2_Click"/>
+                </dxn:NavBarGroup>
+
+                <dxn:NavBarGroup x:Name="navBarAdm" Header="Администрирование" IsExpanded="False" ImageSource="Images/icons8-Защита пользователя-32.png">
+                    <dxn:NavBarItem x:Name="barAdm1" Content="Окно администрирования" Click="barAdm1_Click" Select="barAdm1_Click"/>
+                    <dxn:NavBarItem x:Name="barAdm2" Content="Управление пользователями" Click="barAdm2_Click" Select="barAdm2_Click"/>
+                    <dxn:NavBarItem x:Name="barAdm3" Content="Изменение пароля администратора" Click="barAdm3_Click" Select="barAdm3_Click"/>
+                </dxn:NavBarGroup>
+            </dxn:NavBarControl>
+        </dxlc:ScrollBox>
+
+        <WebBrowser Grid.Column="1" HorizontalAlignment="Left"  Margin="0,0,0,0" VerticalAlignment="Top" Name="wb_main"/>
+
+
+    </Grid>
+</Window>

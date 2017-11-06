@@ -1,0 +1,34 @@
+﻿<Window x:Class="GreatestApplicatioInMyLife.insert_char_nom"
+       xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Name="window_unity_di"
+     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    dx:ThemeManager.ThemeName="LightGray"
+    Title="Создание характеристики" Height="250.806" Width="429.443" WindowStartupLocation="CenterScreen" Icon="Images/Настройки-32.png">
+    <StackPanel>
+
+
+
+        <StackPanel>
+            <Label Content="Характеристика" Margin="25,25,0,0" FontSize="14"/>
+            <dxe:ButtonEdit x:Name="be_char" Width="283" HorizontalAlignment="Left" Margin="25,0,0,15" FontSize="14" DefaultButtonClick="be_char_DefaultButtonClick" AllowNullInput="True">
+               
+            </dxe:ButtonEdit>
+            <Label Content="Учетная цена" Margin="25,0,0,0" FontSize="14"/>
+            <dxe:PopupCalcEdit x:Name="ce_price" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15" FontSize="14"/>
+
+
+            <ToolBarPanel x:Name="tbp_main_window_di" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,8,10,0"   >
+                <Button x:Name="bt_create_nom" Content="Добавить" Margin="130,0,30,0"  FontSize="14" Click="bt_create_nom_Click_1" />
+
+                <Button x:Name="bt_can_cr_nom" Content="Закрыть"  FontSize="14" Click="bt_can_cr_nom_Click" />
+            </ToolBarPanel>
+
+
+        </StackPanel>
+
+
+    </StackPanel>
+</Window>

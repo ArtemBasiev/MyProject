@@ -4,7 +4,7 @@
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Добавление склада" Height="360.227" Width="306.818" Activated="win_ins_war_Activated">
+        Title="Добавление склада" Height="288.227" Width="306.818" WindowStartupLocation="CenterScreen" Icon="Images/Перемещать на тележке-32.png" >
     <StackPanel Margin="0,0,0,1">
         <Label Content="Полное наименование" Margin="25,25,0,0"/>
         <dxe:TextEdit x:Name="tb_fn_war" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
@@ -12,8 +12,7 @@
         <dxe:TextEdit x:Name="tb_sn_war" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
         <Label Content="Адресс" Margin="25,0,0,0"/>
         <dxe:TextEdit x:Name="tb_adr_war" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
-        <Label Content="Ответственный сотрудник" Margin="25,0,0,0"/>
-        <dxe:ComboBoxEdit x:Name="cb_res" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+     
         <ToolBarPanel x:Name="tbp_main_window_di" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,15,10,0"  >
             <Button x:Name="bt_create_war" Content="Создать" Margin="58,0,30,0" Click="bt_create_war_Click"/>
             <Button x:Name="bt_can_cr_war" Content="Отмена" />

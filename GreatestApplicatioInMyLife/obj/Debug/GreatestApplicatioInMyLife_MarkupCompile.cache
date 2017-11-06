@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\ARTEM\documents\visual studio 2013\Projects\GreatestApplicatioInMyLife\GreatestApplicatioInMyLife\App.xaml
-11887560049
+24-932771324
 
-151472618440
-29-2052762140
-add_arr.xaml;add_details_arr.xaml;AutWindow.xaml;Insert_Cus.xaml;Insert_Emp.xaml;Insert_Mes.xaml;Insert_Nom.xaml;Insert_Prov.xaml;Insert_War.xaml;MainWindow.xaml;UserControls\uc_dockpanel_di.xaml;
+37-958634353
+104-56917587
+add_arr.xaml;add_details_arr.xaml;add_detail_leave.xaml;add_detail_move.xaml;add_leave.xaml;add_move.xaml;Admin_panel.xaml;AutWindow.xaml;frame_char.xaml;frame_char_arrive.xaml;frame_char_leavemove.xaml;insert_char_nom.xaml;Insert_Cus.xaml;Insert_Emp.xaml;Insert_Mes.xaml;Insert_Nom.xaml;Insert_Prov.xaml;Insert_War.xaml;MainWindow.xaml;nomenclature_frame.xaml;report_frame_arrive.xaml;report_frame_ost.xaml;Report_Window.xaml;UserControls\uc_dockpanel_di.xaml;
 
 False
 

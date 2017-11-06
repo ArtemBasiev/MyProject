@@ -1,0 +1,8 @@
+﻿<Window x:Class="GreatestApplicatioInMyLife.nomenclature_frame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="nomenclature_frame" Height="367.046" Width="646.591">
+    <Grid>
+
+    </Grid>
+</Window>

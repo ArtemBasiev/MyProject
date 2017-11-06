@@ -29,21 +29,16 @@ namespace GreatestApplicatioInMyLife
         {
             try
             {
-                FbCommand sqlforin = new FbCommand("INS_CUS", con_ins_cus.presh.preh.fb);
+                FbCommand sqlforin = new FbCommand("INS_OBJECTS", con_ins_cus.presh.preh.fb);
                 sqlforin.CommandType = System.Data.CommandType.StoredProcedure;
-                sqlforin.Parameters.Add("@NAME", FbDbType.VarChar).Value = tb_name_cus.Text;
-                sqlforin.Parameters.Add("@CONT_NAME", FbDbType.VarChar).Value = tb_conname.Text;
-                sqlforin.Parameters.Add("@ADR", FbDbType.VarChar).Value = tb_adr_cus.Text;
-                sqlforin.Parameters.Add("@TEL", FbDbType.VarChar).Value = tb_tel_cus.Text;
-                sqlforin.Parameters.Add("@INN", FbDbType.VarChar).Value = tb_inn_cus.Text;
+                sqlforin.Parameters.Add("@FN", FbDbType.VarChar).Value = tb_fname.Text;
+                sqlforin.Parameters.Add("@SN", FbDbType.VarChar).Value = tb_sname.Text;
                 sqlforin.ExecuteNonQuery();
 
 
-                tb_name_cus.Clear();
-                tb_conname.Clear();
-                tb_adr_cus.Clear();
-                tb_inn_cus.Clear();
-                tb_tel_cus.Clear();
+                tb_fname.Clear();
+                tb_sname.Clear();
+
                 System.Windows.MessageBox.Show("Запись успешно добавлена!");
             }
 

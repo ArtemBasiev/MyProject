@@ -33,26 +33,86 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Test\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Mvvm.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.2.UI, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpf.Carousel.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Controls.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Core.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Docking.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Grid.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Grid.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.Layout.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Xpf.LayoutControl.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.RichEdit.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v15.2.Core, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.2.Extensions, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.8.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.8.0\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+    <Reference Include="FirebirdSql.Data.FirebirdClient, Version=5.9.0.0, Culture=neutral, PublicKeyToken=3750abcc3150b00c, processorArchitecture=MSIL">
+      <HintPath>..\packages\FirebirdSql.Data.FirebirdClient.5.9.0.1\lib\net40-client\FirebirdSql.Data.FirebirdClient.dll</HintPath>
+      <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +139,118 @@
     <Compile Include="add_details_arr.xaml.cs">
       <DependentUpon>add_details_arr.xaml</DependentUpon>
     </Compile>
+    <Compile Include="add_detail_leave.xaml.cs">
+      <DependentUpon>add_detail_leave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_detail_move.xaml.cs">
+      <DependentUpon>add_detail_move.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_group_nom.xaml.cs">
+      <DependentUpon>add_group_nom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_leave.xaml.cs">
+      <DependentUpon>add_leave.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_move.xaml.cs">
+      <DependentUpon>add_move.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_role.xaml.cs">
+      <DependentUpon>add_role.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="add_user.xaml.cs">
+      <DependentUpon>add_user.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_panel.xaml.cs">
+      <DependentUpon>Admin_panel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DXSplashScreen\SplashScreenView.xaml.cs">
+      <DependentUpon>SplashScreenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="edit_roles.xaml.cs">
+      <DependentUpon>edit_roles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frame_char.xaml.cs">
+      <DependentUpon>frame_char.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frame_char_arrive.xaml.cs">
+      <DependentUpon>frame_char_arrive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frame_char_leavemove.xaml.cs">
+      <DependentUpon>frame_char_leavemove.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frame_doc.xaml.cs">
+      <DependentUpon>frame_doc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frame_emp.xaml.cs">
+      <DependentUpon>frame_emp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridInitType.cs" />
+    <Compile Include="insert_char_nom.xaml.cs">
+      <DependentUpon>insert_char_nom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="insert_di_char.xaml.cs">
+      <DependentUpon>insert_di_char.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="instruction.xaml.cs">
+      <DependentUpon>instruction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="nomenclature_frame.xaml.cs">
+      <DependentUpon>nomenclature_frame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pas_change.xaml.cs">
+      <DependentUpon>pas_change.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report_Arrive.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report_Arrive.Designer.cs">
+      <DependentUpon>Report_Arrive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_arr_all.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_arr_all.Designer.cs">
+      <DependentUpon>report_arr_all.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_frame_arrive.xaml.cs">
+      <DependentUpon>report_frame_arrive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="report_frame_ost.xaml.cs">
+      <DependentUpon>report_frame_ost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="report_leave.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_leave.Designer.cs">
+      <DependentUpon>report_leave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_leave_all.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_leave_all.Designer.cs">
+      <DependentUpon>report_leave_all.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_move.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_move.Designer.cs">
+      <DependentUpon>report_move.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_move_all.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_move_all.Designer.cs">
+      <DependentUpon>report_move_all.cs</DependentUpon>
+    </Compile>
+    <Compile Include="report_ost.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="report_ost.Designer.cs">
+      <DependentUpon>report_ost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report_Window.xaml.cs">
+      <DependentUpon>Report_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\uc_dockpanel_di.xaml.cs">
       <DependentUpon>uc_dockpanel_di.xaml</DependentUpon>
     </Compile>
@@ -90,11 +262,79 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="add_detail_leave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_detail_move.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_group_nom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_leave.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_move.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_role.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="add_user.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Admin_panel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="DXSplashScreen\SplashScreenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="edit_roles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frame_char.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frame_char_arrive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frame_char_leavemove.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frame_doc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frame_emp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="insert_char_nom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Insert_Cus.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="insert_di_char.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -115,6 +355,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Insert_War.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="instruction.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +395,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="nomenclature_frame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pas_change.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="report_frame_arrive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="report_frame_ost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Report_Window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\uc_dockpanel_di.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -175,6 +439,28 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report_Arrive.resx">
+      <DependentUpon>Report_Arrive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_arr_all.resx">
+      <DependentUpon>report_arr_all.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_leave.resx">
+      <DependentUpon>report_leave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_leave_all.resx">
+      <DependentUpon>report_leave_all.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_move.resx">
+      <DependentUpon>report_move.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_move_all.resx">
+      <DependentUpon>report_move_all.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="report_ost.resx">
+      <DependentUpon>report_ost.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="docins\справка.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -281,7 +567,104 @@
   <ItemGroup>
     <Resource Include="UserControls\Images\Team_16x16.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Question_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Add_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Cancel_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UserControls\Images\Refresh_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Выход-16.png" />
+    <Resource Include="Images\Длина-16.png" />
+    <Resource Include="Images\Информация-16.png" />
+    <Resource Include="Images\Магазин-16.png" />
+    <Resource Include="Images\Свойства сценария-16.png" />
+    <Resource Include="Images\Склад-16.png" />
+    <Resource Include="Images\Список-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Бухгалтерский учет-16.png" />
+    <Resource Include="Images\Бухгалтерский учет-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Настройки-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Печать-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Перемещать на тележке-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Print_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Фура-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Настройки-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Параметры сортировки-16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="path.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Cегодня-32.png" />
+    <Resource Include="Images\Календарь-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-Документы Google-32.png" />
+    <Resource Include="Images\icons8-Журнал-32.png" />
+    <Resource Include="Images\icons8-Защита пользователя-32.png" />
+    <Resource Include="Images\icons8-Поиск-32.png" />
+    <Resource Include="Images\icons8-Чек-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="docins\help.html" />
+    <Resource Include="Images\dooor.jpg" />
+    <Resource Include="Images\icons8-Перемещение запаса-16.png" />
+    <Resource Include="Images\icons8-Продать запас-16.png" />
+    <Resource Include="Images\icons8-Завод-16.png" />
+    <Resource Include="Images\icons8-Завод-32.png" />
+    <Resource Include="Images\icons8-Пароль-16.png" />
+    <Resource Include="Images\icons8-Пароль-32.png" />
+    <Resource Include="Images\icons8-Театральные маски-16.png" />
+    <Resource Include="Images\icons8-Театральные маски-32.png" />
+    <Resource Include="Images\icons8-Дерево папок-16.png" />
+    <Resource Include="Images\icons8-Дерево папок-32.png" />
+    <Resource Include="Images\Creative_Wallpaper_Door_015997_.jpg" />
+    <Resource Include="Images\icons8-Коробка-16.png" />
+    <Resource Include="Images\icons8-Коробка-32.png" />
+    <Resource Include="Images\Edit_16x16.png" />
+    <Resource Include="Images\Edit_32x32.png" />
+    <Resource Include="DXSplashScreen\Image.png" />
+    <Resource Include="DXSplashScreen\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -4,7 +4,7 @@
           xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Создание единицы измерения" Height="257.318" Width="312.909">
+        Title="Создание единицы измерения" Height="257.318" Width="312.909" Icon="Images/Длина-16.png">
     <StackPanel>
         <Label Content="Полное наименование" Margin="25,25,0,0"/>
         <dxe:TextEdit x:Name="tb_fn_mes" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>

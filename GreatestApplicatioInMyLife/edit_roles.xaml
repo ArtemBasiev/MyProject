@@ -1,0 +1,66 @@
+﻿<Window x:Class="GreatestApplicatioInMyLife.edit_roles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Name="window_edit_role"
+        dx:ThemeManager.ThemeName="LightGray"
+        Title="Изменение роли" Height="457.596" Width="319.5"  WindowStartupLocation="CenterScreen" Activated="window_edit_role_Activated" Icon="Images/icons8-Театральные маски-32.png" >
+    <StackPanel Margin="0,0,0,7">
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chnom"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Номенлатура" Margin="10,10,0,0"/>
+           
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chchar"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Характеристика номенклатуры" Margin="10,10,0,0"/>       
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chemp"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Сотрудники" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chcontr"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Контрагенты" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chwar"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Склады" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chmes"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Единицы измерения" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chobj"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Справочник Объекты" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="charr"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Журнал прихода" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chleave"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Журнал расхода" Margin="10,10,0,0"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <dxe:CheckEdit x:Name="chmove"   HorizontalAlignment="Left" Margin="25,12,0,0" GotFocus="chnom_GotFocus"  />
+            <Label Content="Журнал перемещения" Margin="10,10,0,0"/>
+        </StackPanel>
+        <ToolBarPanel x:Name="tbp_main_window_di" VerticalAlignment="Bottom" Margin="10,20,46,0" Orientation="Horizontal" Height="24"  >
+
+            <Button x:Name="bt_apply" Content="Применить" Margin="58,0,30,0" Click="bt_apply_Click" IsEnabled="False" />
+
+            <Button x:Name="bt_cancel" Content="Отмена" Click="bt_cancel_Click"  />
+
+        </ToolBarPanel>
+    </StackPanel>
+</Window>

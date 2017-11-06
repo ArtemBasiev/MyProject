@@ -12,23 +12,65 @@
              xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar"
              xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
              xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-             dx:ThemeManager.ThemeName="LightGray"
+             dx:ThemeManager.ThemeName="Office2013"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="800">
     <dxdo:DocumentPanel x:Name="dp_main_di">
-        <StackPanel>
-            <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10">
-                <dxb:BarButtonItem x:Name="but_nom" Content="Добавить" ItemClick="but_nom_ItemClick" />
-                <dxb:BarButtonItem x:Name="but_del" Content="Удалить" ItemClick="but_del_ItemClick"  />
-                <dxb:BarButtonItem x:Name="but_refresh" Content="Обновить" ItemClick="but_refresh_ItemClick" />
-                <dxb:BarButtonItem x:Name="but_help" Content="Справка"  />
-            </dxb:ToolBarControl>
-            <dxg:GridControl x:Name="grid_di" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" KeyUp="grid_di_KeyUp">
-                <dxg:GridControl.View>
-                    <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
-                </dxg:GridControl.View>
-            </dxg:GridControl>
-            
-        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*" Name="space_tree" />
+                <ColumnDefinition Width="81*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.ColumnSpan="1" Margin="12,0" Visibility="Hidden" Name="Tree_SP">
+                <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                    <dxb:BarButtonItem x:Name="but_refresh_tree" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" ItemClick="but_refresh_tree_ItemClick" />
+                    <dxb:BarButtonItem x:Name="but_add_tree" Content="Добавить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Add_32x32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" IsVisible="False" ItemClick="but_add_tree_ItemClick" />
+                    <dxb:BarButtonItem x:Name="but_del_tree" Content="Удалить"  Glyph="/GreatestApplicatioInMyLife;component/Images/Cancel_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" IsVisible="False" ItemClick="but_del_tree_ItemClick"  />
+                </dxb:ToolBarControl>
+                <dxg:GridControl x:Name="grid_tree" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" SelectedItemChanged="grid_tree_SelectedItemChanged" KeyUp="grid_tree_KeyUp">
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="view_grid_tree" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </StackPanel>
+
+
+            <StackPanel HorizontalAlignment="Stretch" Grid.Column="1" Grid.ColumnSpan="1">
+                <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="5, 5, 10, 10" Height="64">
+                    <dxb:BarButtonItem x:Name="but_closewp"   Content="Закрыть период"  Glyph="/GreatestApplicatioInMyLife;component/Images/Cегодня-32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" IsVisible="False" ItemClick="but_closewp_ItemClick" />
+                    <dxb:BarButtonItem x:Name="but_openwp" Content="Открыть период"  Glyph="/GreatestApplicatioInMyLife;component/Images/Календарь-32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" IsVisible="False" ItemClick="but_openwp_ItemClick" />
+                    <dxb:BarButtonItem x:Name="but_nom" Content="Добавить" ItemClick="but_nom_ItemClick" Glyph="/GreatestApplicatioInMyLife;component/Images/Add_32x32.png" GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" />
+                    <dxb:BarButtonItem x:Name="but_del" Content="Удалить" ItemClick="but_del_ItemClick" Glyph="/GreatestApplicatioInMyLife;component/Images/Cancel_32x32.png" GlyphSize="Large" MergeType="Default" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top"  />
+                    
+                    <dxb:BarButtonItem x:Name="but_refresh" Content="Обновить" ItemClick="but_refresh_ItemClick" BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Large" Glyph="Images/Refresh2_32x32.png" />
+                    <dxb:BarButtonItem x:Name="but_showdoc" Content="Документы"   GlyphAlignment="Top" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Large" IsVisible="False" Glyph="/GreatestApplicatioInMyLife;component/Images/icons8-Документы Google-32.png" ItemClick="but_showdoc_ItemClick" />
+                    <dxb:BarButtonItem x:Name="but_help" Content="Справка" GlyphAlignment="Top" GlyphSize="Large" BarItemDisplayMode="ContentAndGlyph" Glyph="Images/Question_32x32.png" ItemClick="but_help_ItemClick"  />
+                </dxb:ToolBarControl>
+                <dxg:GridControl x:Name="grid_di" MaxHeight = "1000" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" KeyUp="grid_di_KeyUp" SelectedItemChanged="grid_di_SelectedItemChanged">
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="view_grid_di" AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+                <dx:DXTabControl x:Name="tab_det" Margin="0,15,0,0" Visibility="Hidden" >
+                    <dx:DXTabItem x:Name="tub_title" Header="Tab">
+                        <StackPanel>
+                            <dxb:ToolBarControl VerticalAlignment="Stretch" Margin="10,5,10,10">
+                                <dxb:BarButtonItem x:Name="but_add_det" Content="Добавить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Small" Glyph="Images/Add_16x16.png" ItemClick="but_add_det_ItemClick" />
+                                <dxb:BarButtonItem x:Name="but_del_det" Content="Удалить"  GlyphAlignment="Top" GlyphSize="Small" Glyph="Images/Cancel_16x16.png" BarItemDisplayMode="ContentAndGlyph" AllowGlyphTheming="False" ItemClick="but_del_det_ItemClick"  />
+                                <dxb:BarButtonItem x:Name="but_refresh_det" Content="Обновить"  BarItemDisplayMode="ContentAndGlyph" GlyphAlignment="Top" GlyphSize="Small" Glyph="Images/Refresh2_32x32.png" ItemClick="but_refresh_det_ItemClick" />
+                               
+                            </dxb:ToolBarControl>
+                            <dxg:GridControl x:Name="grid_di_det" MaxHeight = "500" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
+                                </dxg:GridControl.View>
+                            </dxg:GridControl>
+                        </StackPanel>
+                    </dx:DXTabItem>
+                   
+                </dx:DXTabControl>
+
+            </StackPanel>
+        </Grid>
     </dxdo:DocumentPanel>
 </UserControl>

@@ -1,0 +1,10 @@
+﻿<Window x:Class="GreatestApplicatioInMyLife.Report_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxrud="http://schemas.devexpress.com/winfx/2008/xaml/reports/userdesigner" xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/printing"
+        dx:ThemeManager.ThemeName="Office2013"
+        Title="Просмотр отчета" Height="510" Width="1213.41" Activated="Window_Activated_1" Icon="UserControls/Images/Print_32x32.png">
+    <dxp:DocumentPreviewControl Name="DocView"/>
+
+</Window>

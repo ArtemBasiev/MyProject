@@ -4,16 +4,12 @@
          xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
          xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" x:Name="window_add_arr"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Добавление прихода" Height="426.733" Width="300" Activated="window_add_arr_Activated">
+        Title="Добавление прихода" Height="214.733" Width="300" Activated="window_add_arr_Activated" WindowStartupLocation="CenterScreen" Icon="Images/Фура-16.png">
     <StackPanel>
-        <Label Content="Приход от:" Margin="25,25,0,0"/>
-        <DatePicker Margin="25,0,15,0" Name="dp_cr_date_arr"/>
-        <Label Content="На склад:" Margin="25,25,0,0"/>
-        <TextBlock x:Name="tb_war_arr" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15" Height="21"/>
         <Label Content="Поставщик" Margin="25,0,0,0"/>
         <dxe:ComboBoxEdit x:Name="cb_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
         <Label Content="Комментарий:" Margin="25,0,0,0"/>
-        <dxe:TextEdit x:Name="comment_arr" Width="250" Height="70" HorizontalAlignment="Left" Margin="25,0,0,15" AllowNullInput="True" AllowUpdateTextBlockWhenPrinting="True"/>
+        <dxe:MemoEdit x:Name="comment_arr" Width="250"  HorizontalAlignment="Left" Margin="25,0,0,15" AllowNullInput="True" AllowUpdateTextBlockWhenPrinting="True"/>
         <ToolBarPanel x:Name="tbp_main_window_di" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,15,10,0"  >
             <Button x:Name="bt_create_arr" Content="Создать" Margin="58,0,30,0" Click="bt_create_arr_Click"/>
 

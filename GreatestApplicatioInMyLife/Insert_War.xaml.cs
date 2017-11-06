@@ -28,47 +28,11 @@ namespace GreatestApplicatioInMyLife
 
 
 
-        ////----------------------------Заполнение комбобокса ответственный----------------------
-        public void load_cb_res()
-        {
-            cb_res.Items.Clear();
-            FbCommand sqlforcomb = new FbCommand("select * from GET_RES", con_ins_war.presh.preh.fb);
-            FbDataReader readercomb = sqlforcomb.ExecuteReader();
-
-            if (readercomb.HasRows) // если есть данные
-            {
-
-                DataSet newset1 = new DataSet("newset1");
-                DataTable dtcomb = new DataTable();
-                while (readercomb.Read())
-                {
-                    try
-                    {
-                        string resultvalue = readercomb.GetString(0);
-                        cb_res.Items.Add(resultvalue);
-                    }
-                    catch { }
-
-                }
-
-
-
-            }
-        }
-
-
 
         private void bt_create_war_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-
-                //Вытаскиваем ID сотрудника
-                FbCommand sqlforcombsrav = new FbCommand("select ID_RES from GET_ID_RES where SN ='" + cb_res.Text + "'", con_ins_war.presh.preh.fb);
-                FbDataReader readercombsrav = sqlforcombsrav.ExecuteReader();
-                DataTable wdf = new DataTable();
-                wdf.Load(readercombsrav);
-                string drr = cb_res.Text;
 
 
 
@@ -77,14 +41,14 @@ namespace GreatestApplicatioInMyLife
                 sqlforin.Parameters.Add("@FN", FbDbType.VarChar).Value = tb_fn_war.Text;
                 sqlforin.Parameters.Add("@SN", FbDbType.VarChar).Value = tb_sn_war.Text;
                 sqlforin.Parameters.Add("@ADR", FbDbType.VarChar).Value = tb_adr_war.Text;
-                sqlforin.Parameters.Add("@RES", FbDbType.VarChar).Value = wdf.Rows[0][0].ToString();
+      
                 sqlforin.ExecuteNonQuery();
 
 
                 tb_fn_war.Clear();
                 tb_sn_war.Clear();
                 tb_adr_war.Clear();
-                cb_res.Clear();
+         
                 System.Windows.MessageBox.Show("Запись успешно добавлена!");
             }
 
@@ -95,11 +59,7 @@ namespace GreatestApplicatioInMyLife
             }
         }
 
-        private void win_ins_war_Activated(object sender, EventArgs e)
-        {
-            load_cb_res();
-        }
-
+    
     
     }
 }

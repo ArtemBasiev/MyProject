@@ -4,10 +4,14 @@
          xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Insert_Prov" Height="319" Width="308">
+        Title="Добавить контрагента" Height="528" Width="308" WindowStartupLocation="CenterScreen" Icon="Images/icons8-Завод-32.png">
     <StackPanel>
-        <Label Content="Наименование" Margin="25,25,0,0"/>
-        <dxe:TextEdit x:Name="tb_name_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+        <Label Content="Полное наименование" Margin="25,25,0,0"/>
+        <dxe:TextEdit x:Name="tb_fname_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+        <Label Content="Сокращенное наименование" Margin="25,25,0,0"/>
+        <dxe:TextEdit x:Name="tb_sname_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+        <Label Content="Имя представителя" Margin="25,1,0,0"/>
+        <dxe:TextEdit x:Name="tb_contname_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
         <Label Content="Адресс" Margin="25,0,0,0"/>
         <dxe:TextEdit x:Name="tb_adr_prov" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
         <Label Content="ИНН" Margin="25,0,0,0"/>

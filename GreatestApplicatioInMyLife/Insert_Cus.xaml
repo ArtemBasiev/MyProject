@@ -4,18 +4,12 @@
             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Добавление покупателя" Height="434.181" Width="300">
+        Title="Добавление объекта" Height="258.181" Width="300" WindowStartupLocation="CenterScreen" Icon="Images/icons8-Завод-32.png">
     <StackPanel Margin="0,0,0,1">
-        <Label Content="Наименование" Margin="25,25,0,0"/>
-        <dxe:TextEdit x:Name="tb_name_cus" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
-        <Label Content="Имя представителя" Margin="25,0,0,0"/>
-        <dxe:TextEdit x:Name="tb_conname" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
-        <Label Content="Адресс" Margin="25,0,0,0"/>
-        <dxe:TextEdit x:Name="tb_adr_cus" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
-        <Label Content="ИНН" Margin="25,0,0,0"/>
-        <dxe:TextEdit x:Name="tb_inn_cus" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
-        <Label Content="Телефон" Margin="25,0,0,0"/>
-        <dxe:TextEdit x:Name="tb_tel_cus" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+        <Label Content="Полное наименование" Margin="25,25,0,0"/>
+        <dxe:TextEdit x:Name="tb_fname" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
+        <Label Content="Сокращенное наименование" Margin="25,0,0,0"/>
+        <dxe:TextEdit x:Name="tb_sname" Width="250" HorizontalAlignment="Left" Margin="25,0,0,15"/>
         <ToolBarPanel x:Name="tbp_main_window_di" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,15,10,0"  >
             <Button x:Name="bt_create_cus" Content="Создать" Margin="58,0,30,0" Click="bt_create_cus_Click"/>
             <Button x:Name="bt_can_cr_cus" Content="Отмена" />

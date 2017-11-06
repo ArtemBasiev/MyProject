@@ -5,23 +5,19 @@
          xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" x:Class="GreatestApplicatioInMyLife.add_details_arr"
         x:Name="window_add_details_arr"
         dx:ThemeManager.ThemeName="LightGray"
-        Title="Добавить товар" Height="412" Width="930.773" Closed="window_add_details_arr_Closed">
+        Title="Добавить номенклатуру" Height="235" Width="386.773"  Icon="Images/Настройки-16.png" WindowStartupLocation="CenterScreen">
     <StackPanel>
 
-        <dxg:GridControl x:Name="cg_choosing_nom" AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" MaxHeight="600" Height="200" Loaded="cg_choosing_nom_Loaded">
-            <dxg:GridControl.View>
-                <dxg:TableView AllowPerPixelScrolling="True" ShowTotalSummary="True"/>
-            </dxg:GridControl.View>
-        </dxg:GridControl>
+
+
+        <Label Content="Номенклатура:" Margin="25,10,0,0"/>
+        <dxe:ButtonEdit x:Name="be_nom" Width="329" HorizontalAlignment="Left" Margin="25,0,0,25" DefaultButtonClick="be_nom_DefaultButtonClick"   />
 
         <Label Content="Количество:" Margin="25,0,0,0"/>
-        <dxe:PopupCalcEdit x:Name="calc_sel" Width="250" HorizontalAlignment="Left" Margin="25,0,0,13" TextInput="calc_sel_TextInput" LostFocus="calc_sel_LostFocus" />
-
-        <Label Content="Сумма:" Margin="25,0,0,0"/>
-        <TextBox x:Name="tb_sum" Width="250" HorizontalAlignment="Left" Margin="25,0,0,0" Height="19" />
+        <dxe:PopupCalcEdit x:Name="culc_sum" Width="132" HorizontalAlignment="Left" Margin="25,0,0,20" TextInput="calc_sel_TextInput" />
 
         <ToolBarPanel x:Name="tbp_main_window_di" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="10,15,10,0"  >
-            <Button x:Name="bt_add_det" Content="Добавить" Margin="58,0,30,0" Click="bt_add_det_Click" />
+            <Button x:Name="bt_add_det" Content="Добавить" Margin="100,0,30,0" Click="bt_add_det_Click" />
 
             <Button x:Name="bt_can_add_det" Content="Отмена" />
 
